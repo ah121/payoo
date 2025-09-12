@@ -14,5 +14,46 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+  <body class="bg-gray-100 h-[100vh] flex justify-center items-center">
+    <div
+      class="flex flex-col justify-center items-center w-80 border-blue-600 border-3 bg-white p-8 rounded-xl"
+    >
+      <div
+        class="bg-[url('./assets/bg.png')] rounded-xl bg-cover w-full flex items-center justify-center p-5"
+      >
+        <img src="./assets/Group.png" alt="" class="" />
+      </div>
+      <form action="" class="space-y-3 w-full">
+        <div class="flex flex-col gap-3">
+          <label for="">Mobile Number</label>
+          <input
+            type="text"
+            name=""
+            id="mob-num"
+            class="input bg-gray-100 rounded-2xl"
+            placeholder="Enter Your Number"
+          />
+        </div>
+        <div class="flex flex-col gap-3">
+          <label for="">4 Digit Pin</label>
+          <input
+            type="text"
+            name=""
+            id="pin-num"
+            class="input bg-gray-100 rounded-2xl"
+            placeholder="Enter 4 Digit Pin"
+          />
+        </div>
+        <button
+          id="login-btn"
+          type="button"
+          class="btn bg-blue-600 rounded-2xl w-full text-white"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
