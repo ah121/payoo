@@ -63,6 +63,7 @@
         <div class="menu-cont w-[400px] mx-auto grid grid-cols-3 gap-3">
           <!-- add money  -->
           <div
+            id="addMoney"
             class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-2xl shadow-xl p-3 text-sm text-gray-400"
           >
             <img src="./assets/wallet1.png" alt="" />
@@ -70,6 +71,7 @@
           </div>
           <!-- cahout  -->
           <div
+            id="cashOut"
             class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-2xl shadow-xl p-3 text-sm text-gray-400"
           >
             <img src="./assets/send1.png" alt="" />
@@ -78,6 +80,7 @@
           <!-- cahout  -->
           <!-- transfer money  -->
           <div
+            id="transferMoney"
             class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-2xl shadow-xl p-3 text-sm text-gray-400"
           >
             <img src="./assets/money1.png" alt="" />
@@ -86,22 +89,25 @@
           <!-- transfer money  -->
           <!-- get bonus  -->
           <div
+            id="getBonus"
             class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-2xl shadow-xl p-3 text-sm text-gray-400"
           >
             <img src="./assets/bonus1.png" alt="" />
             <p>Get Bonus</p>
           </div>
           <!-- get bonus  -->
+          <!-- Pay Bill  -->
           <div
+            id="payBills"
             class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-2xl shadow-xl p-3 text-sm text-gray-400"
           >
             <img src="./assets/purse1.png" alt="" />
-            <p>Add Money</p>
+            <p>Pay Bills</p>
           </div>
-          <!-- Pay Bill  -->
           <!-- Pay Bill  -->
           <!-- transaction  -->
           <div
+            id="trans-history"
             class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-2xl shadow-xl p-3 text-sm text-gray-400"
           >
             <img src="./assets/transaction1.png" alt="" />
@@ -112,9 +118,9 @@
       </section>
       <!-- menu section close  -->
       <!-- menu information section start  -->
-      <section class="pt-7">
+      <section id="menu-info" class="pt-7">
         <!-- add money section start  -->
-        <div class="w-[400px] mx-auto">
+        <div id="add-money-info" class="w-[400px] mx-auto hidden">
           <h1 class="font-bold py-3">Add Money</h1>
           <form action="" class="p-5 bg-white rounded-xl">
             <div class="flex flex-col gap-2">
@@ -226,7 +232,7 @@
         </div>
         <!-- add money section close  -->
         <!-- cash out section start  -->
-        <div class="w-[400px] mx-auto">
+        <div id="cashout-info" class="w-[400px] mx-auto hidden">
           <h1 class="font-bold py-3">Cash Out</h1>
           <form action="" class="p-5 bg-white rounded-xl">
             <div class="flex flex-col gap-2">
@@ -235,21 +241,21 @@
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter 11 digit Agent number"
-                id="bank-acct"
+                id="agent-acct"
               />
               <label for="add-amount">Amount</label>
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Add Amount to withdraw"
-                id="add-amount"
+                id="cashout-amount"
               />
               <label for="pin-num">Pin Number</label>
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter 4 digit pin number"
-                id="pin-num"
+                id="cashout-pin"
               />
               <button
                 type="button"
@@ -263,7 +269,7 @@
         </div>
         <!-- cash out section close  -->
         <!-- transfer money section start  -->
-        <div class="w-[400px] mx-auto">
+        <div id="transfer-info" class="w-[400px] mx-auto hidden">
           <h1 class="font-bold py-3">Transfer Money</h1>
           <form action="" class="p-5 bg-white rounded-xl">
             <div class="flex flex-col gap-2">
@@ -272,21 +278,21 @@
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter 11 digit account number"
-                id="bank-acct"
+                id="transfer-acct"
               />
               <label for="add-amount">Amount</label>
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Add Amount to Transfer"
-                id="add-amount"
+                id="transfer-amount"
               />
               <label for="pin-num">Pin Number</label>
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter 4 digit pin number"
-                id="pin-num"
+                id="transfer-pin"
               />
               <button
                 type="button"
@@ -300,7 +306,7 @@
         </div>
         <!-- transfer money section close  -->
         <!-- get bonus section start  -->
-        <div class="w-[400px] mx-auto">
+        <div id="bonus-info" class="w-[400px] mx-auto hidden">
           <h1 class="font-bold py-3">Get Bonus</h1>
           <form action="" class="p-5 bg-white rounded-xl">
             <div class="flex flex-col gap-2">
@@ -309,7 +315,7 @@
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter Your Coupon"
-                id="bank-acct"
+                id="bonus-code"
               />
               <button
                 type="button"
@@ -322,8 +328,8 @@
           </form>
         </div>
         <!-- get bonus section close  -->
-        <!-- add money section start  -->
-        <div class="w-[400px] mx-auto">
+        <!-- pay bill section start  -->
+        <div id="bill-info" class="w-[400px] mx-auto hidden">
           <h1 class="font-bold py-3">Pay Bill</h1>
           <form action="" class="p-5 bg-white rounded-xl">
             <div class="flex flex-col gap-2">
@@ -345,21 +351,21 @@
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter account number"
-                id="bank-acct"
+                id="pay-acct"
               />
               <label for="add-amount">Amount to Pay</label>
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter Amount to Pay"
-                id="add-amount"
+                id="pay-amount"
               />
               <label for="pin-num">Pin Number</label>
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Enter 4 digit pin number"
-                id="pin-num"
+                id="pay-pin"
               />
               <button
                 type="button"
@@ -371,9 +377,9 @@
             </div>
           </form>
         </div>
-        <!-- add money section close  -->
+        <!-- pay bill section close  -->
         <!-- transaction History section start -->
-        <div class="w-[400px] mx-auto">
+        <div id="transaction-info" class="w-[400px] mx-auto hidden">
           <div class="flex justify-between items-center">
             <h1 class="font-bold py-3">Pay Bill</h1>
             <span class="text-gray-400">View All</span>

@@ -5,3 +5,6 @@
   background-color: #dbeafe;
   color: blue;
 }
+.show {
+  display: block;
+}
