@@ -32,7 +32,7 @@
           <div class="flex gap-2">
             <img src="./assets/Group.png" alt="" class="h-12" />
             <div>
-              <h1 class="font-bold">$ <span>45000</span></h1>
+              <h1 class="font-bold">$ <span id="main-balance">45000</span></h1>
               <p class="text-gray-400">Available Balance</p>
             </div>
           </div>
@@ -113,6 +113,7 @@
       <!-- menu section close  -->
       <!-- menu information section start  -->
       <section class="pt-7">
+        <!-- add money section start  -->
         <div class="w-[400px] mx-auto">
           <h1 class="font-bold py-3">Add Money</h1>
           <form action="" class="p-5 bg-white rounded-xl">
@@ -203,6 +204,43 @@
               <input
                 type="text"
                 class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter Amount to Add"
+                id="add-amount"
+              />
+              <label for="pin-num">Pin Number</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter 4 digit pin number"
+                id="pin-num"
+              />
+              <button
+                type="button"
+                id="add-money-btn"
+                class="btn rounded-3xl mt-2 bg-blue-600 text-white"
+              >
+                Add Money
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- add money section close  -->
+        <!-- cash out section start  -->
+        <div class="w-[400px] mx-auto">
+          <h1 class="font-bold py-3">Cash Out</h1>
+          <form action="" class="p-5 bg-white rounded-xl">
+            <div class="flex flex-col gap-2">
+              <label for="bank-acct">Agent Number</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter 11 digit Agent number"
+                id="bank-acct"
+              />
+              <label for="add-amount">Amount</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
                 placeholder="Add Amount to withdraw"
                 id="add-amount"
               />
@@ -213,13 +251,142 @@
                 placeholder="Enter 4 digit pin number"
                 id="pin-num"
               />
+              <button
+                type="button"
+                id="cashout-btn"
+                class="btn rounded-3xl mt-2 bg-blue-600 text-white"
+              >
+                Withdraw Money
+              </button>
             </div>
           </form>
         </div>
+        <!-- cash out section close  -->
+        <!-- transfer money section start  -->
+        <div class="w-[400px] mx-auto">
+          <h1 class="font-bold py-3">Transfer Money</h1>
+          <form action="" class="p-5 bg-white rounded-xl">
+            <div class="flex flex-col gap-2">
+              <label for="bank-acct">User Account Number</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter 11 digit account number"
+                id="bank-acct"
+              />
+              <label for="add-amount">Amount</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Add Amount to Transfer"
+                id="add-amount"
+              />
+              <label for="pin-num">Pin Number</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter 4 digit pin number"
+                id="pin-num"
+              />
+              <button
+                type="button"
+                id="send-btn"
+                class="btn rounded-3xl mt-2 bg-blue-600 text-white"
+              >
+                Send Now
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- transfer money section close  -->
+        <!-- get bonus section start  -->
+        <div class="w-[400px] mx-auto">
+          <h1 class="font-bold py-3">Get Bonus</h1>
+          <form action="" class="p-5 bg-white rounded-xl">
+            <div class="flex flex-col gap-2">
+              <label for="bank-acct">Enter Bonus Coupon</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter Your Coupon"
+                id="bank-acct"
+              />
+              <button
+                type="button"
+                id="bonus-btn"
+                class="btn rounded-3xl mt-2 bg-blue-600 text-white"
+              >
+                Get Bonus
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- get bonus section close  -->
+        <!-- add money section start  -->
+        <div class="w-[400px] mx-auto">
+          <h1 class="font-bold py-3">Pay Bill</h1>
+          <form action="" class="p-5 bg-white rounded-xl">
+            <div class="flex flex-col gap-2">
+              <label for="select-bank">Slect to Pay</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Select Bank"
+                list="bank-bill"
+                id="select-bill"
+              />
+              <datalist id="bank-bill">
+                <option value="Electricity"></option>
+                <option value="Credit Card"></option>
+                <option value="Internet"></option>
+              </datalist>
+              <label for="bank-acct">Biller Account Number</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter account number"
+                id="bank-acct"
+              />
+              <label for="add-amount">Amount to Pay</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter Amount to Pay"
+                id="add-amount"
+              />
+              <label for="pin-num">Pin Number</label>
+              <input
+                type="text"
+                class="px-4 py-2 rounded-3xl focus:outline-blue-600 bg-gray-100 border-none w-full"
+                placeholder="Enter 4 digit pin number"
+                id="pin-num"
+              />
+              <button
+                type="button"
+                id="bill-btn"
+                class="btn rounded-3xl mt-2 bg-blue-600 text-white"
+              >
+                Pay Now
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- add money section close  -->
+        <!-- transaction History section start -->
+        <div class="w-[400px] mx-auto">
+          <div class="flex justify-between items-center">
+            <h1 class="font-bold py-3">Pay Bill</h1>
+            <span class="text-gray-400">View All</span>
+          </div>
+          <div action="" class="p-5 bg-white rounded-xl">
+            <div class="flex flex-col gap-2"></div>
+          </div>
+        </div>
+        <!-- transaction History section close -->
       </section>
       <!-- menu information section close  -->
     </main>
 
-    <script src="script.js"></script>
+    <script src="home.js"></script>
   </body>
 </html>
