@@ -1,4 +1,14 @@
 const pin = 2;
+const transHistory = [];
+// transaction history
+function allHistory(transId) {
+  const indHistory = {
+    transId: transId,
+    date: new Date().toLocaleTimeString(),
+  };
+  transHistory.push(indHistory);
+  return indHistory;
+}
 // active btn reuseable function
 function activeButton(buttonId, infoId) {
   document
@@ -72,6 +82,33 @@ document
   .getElementById("trans-history")
   .addEventListener("click", function (e) {
     activeButton("trans-history", "transaction-info");
+    const historyAll = document.getElementById("historyCont");
+    historyAll.innerHTML = "";
+    for (const data of transHistory) {
+      const div = document.createElement("div");
+      div.innerHTML = `<div
+            action=""
+            class="p-5 bg-white rounded-xl border-2 shadow-2xl border-gray-200 mb-4"
+          >
+            <div class="flex gap-3">
+              <img
+                src="./assets/wallet1.png"
+                alt=""
+                class="bg-gray-100 rounded-full p-4"
+              />
+              <div class="flex justify-between items-center w-full">
+                <div class="flex flex-col gap-2">
+                  <h1>${data.transId}</h1>
+                  <h4>${data.date}</h4>
+                </div>
+                <div>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+              </div>
+            </div>
+          </div>`;
+      historyAll.appendChild(div);
+    }
   });
 // Add money btn
 document
@@ -83,6 +120,7 @@ document
       pinId: "pin-num",
       action: "add",
     });
+    allHistory("Add Money");
   });
 // Cash out btn
 document.getElementById("cashout-btn").addEventListener("click", function (e) {
@@ -90,8 +128,9 @@ document.getElementById("cashout-btn").addEventListener("click", function (e) {
     accountId: "agent-acct",
     amountId: "cashout-amount",
     pinId: "cashout-pin",
-    action: "substract",
+    action: "subtract",
   });
+  allHistory("Cash Out");
 });
 // transfer btn
 document.getElementById("send-btn").addEventListener("click", function (e) {
@@ -99,12 +138,13 @@ document.getElementById("send-btn").addEventListener("click", function (e) {
     accountId: "transfer-acct",
     amountId: "transfer-amount",
     pinId: "transfer-pin",
-    action: "substract",
+    action: "subtract",
   });
+  allHistory("Transfer Money");
 });
 // get bonus btn
 document.getElementById("bonus-btn").addEventListener("click", function (e) {
-  console.log("bonus button clicked");
+  allHistory("Get Bonus");
 });
 // bill btn
 document.getElementById("bill-btn").addEventListener("click", function (e) {
@@ -112,10 +152,11 @@ document.getElementById("bill-btn").addEventListener("click", function (e) {
     accountId: "pay-acct",
     amountId: "pay-amount",
     pinId: "pay-pin",
-    action: "substract",
+    action: "subtract",
   });
+  allHistory("Pay Bill");
 });
 // transaction history btn
-document.getElementById("bonus-btn").addEventListener("click", function (e) {
+document.getElementById("trans-btn").addEventListener("click", function (e) {
   console.log("bonus button clicked");
 });
